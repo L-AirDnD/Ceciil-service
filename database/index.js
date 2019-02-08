@@ -14,7 +14,7 @@ const Schema = mongoose.Schema;
 
 const offeringSchema = new Schema({
   offering_id: Number,
-  collection: [{ url: String, caption: String }],
+  photos: [{ url: String, caption: String }],
 });
 
 const Offering = mongoose.model('Offerings_Photos', offeringSchema);
