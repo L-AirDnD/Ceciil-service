@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
+    "mongoose": "^5.4.10",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
   }

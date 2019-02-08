@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: dummyData,
+      data: dummyData[0],
     };
   }
 
@@ -16,8 +16,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {this.state.data.map(item => {
-          return <img src={item.collection[0].url} height="200" width="200w"></img>
+        {this.state.data.collection.map((item) => {
+          return <img src={item.url} alt={item.caption} height="200" width="200w" />;
         })}
       </div>
     );
