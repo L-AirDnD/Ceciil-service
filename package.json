@@ -2,7 +2,7 @@
   "name": "Ceciil-service",
   "version": "1.0.0",
   "description": "",
-  "main": "index.jsx",
+  "main": "server/index.js",
   "scripts": {
     "build": "webpack --watch",
     "server": "nodemon server/index.js"
@@ -35,6 +35,9 @@
     "express": "^4.16.4",
     "mongoose": "^5.4.10",
     "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "react-dom": "^16.8.1",
+    "request": "^2.88.0",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
   }
 }
