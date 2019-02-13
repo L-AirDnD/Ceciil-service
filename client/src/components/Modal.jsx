@@ -14,11 +14,12 @@ const Body = styled.div`
 `;
 
 const Container = styled.div`
-width: 100%;
+  width: 100%;
 `;
 
 const TopBar = styled.div`
-height: 86px;
+  height: 86px;
+  width: 100%;
 `;
 
 const Exit = styled.div`
@@ -34,16 +35,28 @@ const Exit = styled.div`
 
 const BottomBar = styled.div`
   height: 123px;
+  width: 100%;
+
+`;
+
+const Caption = styled.div`
+  color: white;
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  text-align: center;
+  padding-top: 50px;
+  vertical-align: middle;
+  line-spacing:
 `;
 
 const Photo = styled.div`
-align-content: center;
-margin-left: auto;
-margin-right: auto;
-width: 100%;
-height: 565px;
-
-display: flex;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 565px;
+  display: flex;
 `;
 
 const Image = styled.img`
@@ -57,28 +70,27 @@ const Image = styled.img`
 `;
 
 const Arrow = styled.div`
-display: table;
-padding: 3px;
-width 100px;
-color:white;
-cursor: pointer;
-font-size: 42px;
-
+  display: table;
+  padding: 3px;
+  width 100px;
+  color:white;
+  cursor: pointer;
+  font-size: 42px;
 `;
 
 const Right = styled(Arrow)`
-display: table-cell; 
-vertical-align: middle; 
-text-align: center; 
-padding-top: 280px;
+  display: table-cell; 
+  vertical-align: middle; 
+  text-align: center; 
+  padding-top: 280px;
 
 `;
 
 const Left = styled(Arrow)`
-display: table-cell; 
-vertical-align: middle; 
-text-align: center; 
-padding-top: 280px;
+  display: table-cell; 
+  vertical-align: middle; 
+  text-align: center; 
+  padding-top: 280px;
 
 `;
 
@@ -113,7 +125,7 @@ class Modal extends React.Component {
               <Image src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80.jpg" alt="" />
               <Right> R</Right>
             </Photo>
-            <BottomBar>Caption here</BottomBar>
+            <BottomBar><Caption>1/61: Welcome to my apartments!!Please use it as your stay in Tokyo. You will enjoy it.</Caption></BottomBar>
           </Container>
         </Body>
       </div>

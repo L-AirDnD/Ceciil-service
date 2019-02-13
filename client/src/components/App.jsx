@@ -10,6 +10,7 @@ const Image = styled.div`
   background-image: url(https://cdn.theatlantic.com/assets/media/img/mt/2017/06/shutterstock_319985324/lead_720_405.jpg?mod=1533691890);
   background-size: 100% 100%;
   cursor: pointer;
+  border: 1.5px #484848 solid;
 `;
 
 const Parent = styled.div`
