@@ -36,6 +36,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.10",
+    "prop-types": "^15.7.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "request": "^2.88.0",
