@@ -117,11 +117,10 @@ class Modal extends React.Component {
             <Photo>
               <Left>L</Left>
               {/* <Arrow><Right /></Arrow>
-              {this.props.children}
-              <div>
+              {this.props.children} */}
+              {/* <div>
                 <button type="button" closeModal={this.closeModal}>Close</button>
-              </div>
-              <Arrow><Right /></Arrow> */}
+              </div> */}
               <Image src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80.jpg" alt="" />
               <Right> R</Right>
             </Photo>
