@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Body = styled.div`
@@ -33,23 +32,6 @@ const Exit = styled.div`
   margin-top: 13px;
 `;
 
-const BottomBar = styled.div`
-  height: 123px;
-  width: 100%;
-
-`;
-
-const Caption = styled.div`
-  color: white;
-  font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 200;
-  text-align: center;
-  padding-top: 50px;
-  vertical-align: middle;
-  line-spacing:
-`;
-
 const Photo = styled.div`
   align-content: center;
   margin-left: auto;
@@ -62,8 +44,8 @@ const Photo = styled.div`
 const Image = styled.img`
   margin-left: auto;
   margin-right: auto;
+  min-width: 400px;
   max-width: 800px;
-
   width: 100%;
   height: 100%;
   cursor: pointer;
@@ -83,7 +65,6 @@ const Right = styled(Arrow)`
   vertical-align: middle; 
   text-align: center; 
   padding-top: 280px;
-
 `;
 
 const Left = styled(Arrow)`
@@ -91,50 +72,78 @@ const Left = styled(Arrow)`
   vertical-align: middle; 
   text-align: center; 
   padding-top: 280px;
+`;
 
+const BottomBar = styled.div`
+  height: 123px;
+  width: 100%;
+`;
+
+const Caption = styled.div`
+  color: white;
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  text-align: center;
+  padding-top: 50px;
+  vertical-align: middle;
+  line-spacing:
 `;
 
 class Modal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      data: props.data,
+      currentPhoto: 0,
+    };
     this.closeModal = this.closeModal.bind(this);
+    this.previousImage = this.previousImage.bind(this);
+    this.nextImage = this.nextImage.bind(this);
   }
 
   closeModal(event) {
     this.props.closeModal && this.props.closeModal(event);
   }
 
+  previousImage() {
+    if (this.state.currentPhoto !== 0) {
+      this.setState({ currentPhoto: this.state.currentPhoto - 1 });
+    }
+  }
+
+  nextImage() {
+    if (this.state.currentPhoto !== this.state.data.length - 1) {
+      this.setState({ currentPhoto: this.state.currentPhoto + 1 });
+    }
+  }
+
   render() {
     if (!this.props.show) {
       return null;
     }
+    const url = `${this.state.data[this.state.currentPhoto].url}`;
+    const caption = `${this.state.data[this.state.currentPhoto].caption}`;
     return (
       <div>
         <Body>
           <Container>
-            <TopBar><Exit>X</Exit></TopBar>
+            <TopBar>
+              <Exit onClick={this.closeModal}>X</Exit>
+            </TopBar>
             <Photo>
-              <Left>L</Left>
-              {/* <Arrow><Right /></Arrow>
-              {this.props.children} */}
-              {/* <div>
-                <button type="button" closeModal={this.closeModal}>Close</button>
-              </div> */}
-              <Image src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80.jpg" alt="" />
-              <Right> R</Right>
+              <Left onClick={this.previousImage}>L</Left>
+              <Image src={url} alt={caption} />
+              <Right onClick={this.nextImage}>R</Right>
             </Photo>
-            <BottomBar><Caption>1/61: Welcome to my apartments!!Please use it as your stay in Tokyo. You will enjoy it.</Caption></BottomBar>
+            <BottomBar>
+              <Caption>{caption}</Caption>
+            </BottomBar>
           </Container>
         </Body>
       </div>
     );
   }
 }
-
-Modal.propTypes = {
-  closeModal: PropTypes.func.isRequired,
-  show: PropTypes.bool.isRequired,
-};
 
 export default Modal;

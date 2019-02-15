@@ -32,10 +32,9 @@ class App extends React.Component {
     this.showModal = this.showModal.bind(this);
   }
 
-  // componentDidMount() {
-  //   console.log(this.state.data);
-  //   return <FrontPage data={this.state.data} />;
-  // }
+  componentDidMount() {
+    // This handles setting the data in my state
+  }
 
   showModal() {
     this.setState({
@@ -45,11 +44,12 @@ class App extends React.Component {
 
   render() {
     if (this.state.show) {
-      return (<Modal closeModal={this.showModal} show={this.state.show}>Showing</Modal>);
+      return (
+        <Modal data={this.state.data.photos} closeModal={this.showModal} show={this.state.show} />
+      );
     }
     return (
       <div>
-        <Modal closeModal={this.showModal} show={this.state.show}>Message in Modal</Modal>
         <Parent>
           <LargeImage data={this.state.data.photos[0]} />
           <SmallImages data={this.state.data.photos.slice(1)} />
