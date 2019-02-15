@@ -40,9 +40,12 @@ class App extends React.Component {
       url: 'https://localhost:3001/api/photos',
       type: 'GET',
       success: (data) => {
-        console.log('Set the state of the component...')},
+        console.log('Set the state of the component...');
+        this.setState({ data: data });
+      },
       error: () => {
-        console.log('There was an error in your AJAX request...')}
+        console.log('There was an error in your AJAX request...')
+      }
     });
   }
 

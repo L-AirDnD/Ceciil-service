@@ -15,19 +15,12 @@ app.get('/api/photos/:offering', (req, res) => {
   console.log('You pinged the server with Postman!');
 
   // Manually add the offering_id here
-  let id = 1036;
-  db.retrieve(null, (data) => {
+  let id = req.params.offering;
+  db.retrieve(null, id, (data) => {
     console.log('Data from database: ', data);
     res.status(200).send(data);
   });
 });
-
-// app.get('/api/photos/:offering', (req, res) => {
-//   db.retrieve(null, (data) =>{
-//     console.log(data);
-//     res.send(data);
-//   })
-// });
 
 app.listen(port, () => {
   console.log(`Listening to port: ${port}`);
