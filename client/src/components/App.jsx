@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Modal from './Modal.jsx';
 import LargeImage from './MainLargeImage.jsx';
 import SmallImages from './MainSmallImages.jsx';
+import $ from 'jquery';
 import { dummyData } from '../../../data';
 
 const Parent = styled.div`
@@ -34,7 +35,17 @@ class App extends React.Component {
 
   componentDidMount() {
     // This handles setting the data in my state
+    console.log('Attempting to load component...')
+    $.ajax({
+      url: 'https://localhost:3001/api/photos',
+      type: 'GET',
+      success: (data) => {
+        console.log('Set the state of the component...')},
+      error: () => {
+        console.log('There was an error in your AJAX request...')}
+    });
   }
+
 
   showModal() {
     this.setState({
@@ -52,7 +63,7 @@ class App extends React.Component {
       <div>
         <Parent>
           <LargeImage data={this.state.data.photos[0]} />
-          <SmallImages data={this.state.data.photos.slice(1)} />
+          <SmallImages data={this.state.data.photos.slice(1, 5)} />
           <Button onClick={this.showModal}>View Photos</Button>
         </Parent>
       </div>

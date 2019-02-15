@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Image = styled.div`
+const MiniImage = styled.div`
   width: 100%;
   height: 100%;
+  max-height: 400px;
   background-size: 100% 100%;
   cursor: pointer;
   border: 1.5px #484848 solid;
@@ -16,7 +17,7 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  ${Image}:hover {
+  ${MiniImage}:hover {
     opacity: .7;
   }
 `;
@@ -31,7 +32,7 @@ const SmallImages = (props) => {
   return (
     <Container>
       {props.data.map((item) => {
-        return <SmallContainer><Image url={item.url} /></SmallContainer>;
+        return <SmallContainer><MiniImage url={item.url} /></SmallContainer>;
       })}
     </Container>
   );

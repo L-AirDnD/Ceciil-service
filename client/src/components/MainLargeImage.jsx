@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Image = styled.div`
-width: 100%;
-height: 100%;
-background-size: 100% 100%;
-cursor: pointer;
-border: 1.5px #484848 solid;
-background-image: url(${props => props.data.url});
+const MainImage = styled.div`
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  cursor: pointer;
+  border: 1.5px #484848 solid;
+  background-image: url(${props => props.data.url});
 `;
 
 const Container = styled.div`
@@ -16,7 +16,7 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  ${Image}:hover {
+  ${MainImage}:hover {
     opacity: .7;
   }
 `;
@@ -24,7 +24,7 @@ const Container = styled.div`
 const LargeImage = (props) => {
   return (
     <Container>
-      <Image data={props.data} />
+      <MainImage data={props.data} />
     </Container>
   );
 };

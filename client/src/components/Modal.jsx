@@ -137,7 +137,9 @@ class Modal extends React.Component {
               <Right onClick={this.nextImage}>R</Right>
             </Photo>
             <BottomBar>
-              <Caption>{caption}</Caption>
+              <Caption>
+                {`${this.state.currentPhoto + 1}/${this.state.data.length}:`}  {caption}
+              </Caption>
             </BottomBar>
           </Container>
         </Body>
