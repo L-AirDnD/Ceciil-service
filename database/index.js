@@ -19,12 +19,12 @@ const offeringSchema = new Schema({
 
 const Offering = mongoose.model('Offerings_Photo', offeringSchema);
 
-const retrieve = (err, id, cb) => {
+const retrieve = (err, cb) => {
   if (err) {
     console.log('There was an error in retrieve: ', err);
     return;
   }
-  var query = Offering.where({ offering_id: id });
+  var query = Offering.where({ offering_id: 1001 });
   query.findOne(function (err, data) {
     if (err) {
       console.log('There was an error in query: ', err);

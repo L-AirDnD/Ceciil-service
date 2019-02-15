@@ -33,11 +33,12 @@ class App extends React.Component {
     this.showModal = this.showModal.bind(this);
   }
 
+  // This code does not work
+  // Running into runtime issues
   componentDidMount() {
-    // This handles setting the data in my state
     console.log('Attempting to load component...')
     $.ajax({
-      url: 'https://localhost:3001/api/photos',
+      url: '/api/photos/:offering',
       type: 'GET',
       success: (data) => {
         console.log('Set the state of the component...');
@@ -48,7 +49,6 @@ class App extends React.Component {
       }
     });
   }
-
 
   showModal() {
     this.setState({
