@@ -3,3 +3,4 @@ client/dist/bundle.js
 package-lock.json
 .eslintrc.js
 .babelrc
+coverage

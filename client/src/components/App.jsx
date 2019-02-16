@@ -7,9 +7,9 @@ import $ from 'jquery';
 import { dummyData } from '../../../data';
 
 const Parent = styled.div`
+  display: flex;
   width: 100%;
   height: 430px;
-  display: flex;
 `;
 
 const Button = styled.button`
@@ -17,9 +17,9 @@ const Button = styled.button`
   top: 390px;
   right: 24px;
   padding: 6px 15px 6px 15px;
+  color: #484848;
   border-radius: 4px;
   font-size: 14px;
-  color: #484848;
   cursor: pointer;
 `;
 
@@ -33,15 +33,11 @@ class App extends React.Component {
     this.showModal = this.showModal.bind(this);
   }
 
-  // This code does not work
-  // Running into runtime issues
   componentDidMount() {
-    console.log('Attempting to load component...')
     $.ajax({
       url: '/api/photos/:offering',
       type: 'GET',
       success: (data) => {
-        console.log('Set the state of the component...');
         this.setState({ data: data });
       },
       error: () => {

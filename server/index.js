@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
 app.get('/api/photos/:offering', (req, res) => {
-  // let id = req.params.offering || 1002;
   db.retrieve(null, (data) => {
     res.status(200).send(data);
   });

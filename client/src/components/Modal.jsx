@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Body = styled.div`
-  background: rgba(0, 0, 0, 0.85);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
   left: 0px;
   top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
 `;
 
 const Container = styled.div`
@@ -17,77 +17,77 @@ const Container = styled.div`
 `;
 
 const TopBar = styled.div`
-  height: 86px;
   width: 100%;
+  height: 86px;
 `;
 
 const Exit = styled.div`
-  right: 0px;
-  height: 50px;
-  width: 50px;
-  font-size: 28px;
-  color: white;
   float: right;
-  cursor: pointer;
+  right: 0px;
+  width: 50px;
+  height: 50px;
   margin-top: 13px;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
 `;
 
 const Photo = styled.div`
-  align-content: center;
+  display: flex;
+  width: 100%;
+  height: 510px;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-  height: 565px;
-  display: flex;
+  align-content: center;
 `;
 
 const Image = styled.img`
-  margin-left: auto;
-  margin-right: auto;
   min-width: 400px;
   max-width: 800px;
+  max-height: 500px;
   width: 100%;
   height: 100%;
+  margin-left: auto;
+  margin-right: auto;
   cursor: pointer;
 `;
 
 const Arrow = styled.div`
   display: table;
-  padding: 3px;
   width 100px;
-  color:white;
-  cursor: pointer;
+  padding: 3px;
+  color: white;
   font-size: 42px;
+  cursor: pointer;
 `;
 
 const Right = styled(Arrow)`
   display: table-cell; 
-  vertical-align: middle; 
-  text-align: center; 
   padding-top: 280px;
+  text-align: center; 
+  vertical-align: middle; 
 `;
 
 const Left = styled(Arrow)`
   display: table-cell; 
-  vertical-align: middle; 
-  text-align: center; 
   padding-top: 280px;
+  text-align: center; 
+  vertical-align: middle; 
 `;
 
 const BottomBar = styled.div`
-  height: 123px;
   width: 100%;
+  height: 123px;
 `;
 
 const Caption = styled.div`
+  padding-top: 50px;
   color: white;
   font-size: 13px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
   text-align: center;
-  padding-top: 50px;
   vertical-align: middle;
-  line-spacing:
 `;
 
 class Modal extends React.Component {
