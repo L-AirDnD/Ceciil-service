@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoDB = 'mongodb://localhost/test';
+const mongoDB = 'mongodb://localhost:27017/offerings';
 mongoose.connect(mongoDB);
 
 const db = mongoose.connection;
@@ -17,4 +17,9 @@ const offeringSchema = new Schema({
   photos: [{ url: String, caption: String }],
 });
 
-const Offering = mongoose.model('Offerings_Photos', offeringSchema);
+const Offering = mongoose.model('Offerings_Photo', offeringSchema);
+
+module.exports = {
+  Offering,
+  offeringSchema,
+};
