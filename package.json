@@ -8,6 +8,7 @@
     "start": "nodemon server/index.js",
     "test": "jest || true",
     "test:coverage": "jest --coverage --colors || true"
+    "seed": "node seed.js"
   },
   "repository": {
     "type": "git",
