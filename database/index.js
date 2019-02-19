@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const mongoDB = 'mongodb://localhost:27017/offerings';
+const mongoDB = 'mongodb://localhost/offering';
+
 mongoose.connect(mongoDB);
 
 const db = mongoose.connection;
@@ -19,7 +20,23 @@ const offeringSchema = new Schema({
 
 const Offering = mongoose.model('Offerings_Photo', offeringSchema);
 
+const retrieve = (err, cb) => {
+  if (err) {
+    console.log('There was an error in retrieve: ', err);
+    return;
+  }
+  // Change offering_id to your choice of offering
+  var query = Offering.where({ offering_id: 1008 });
+  query.findOne(function (err, data) {
+    if (err) {
+      console.log('There was an error in query: ', err);
+      return;
+    }
+    cb(data);
+  });
+};
+
 module.exports = {
   Offering,
-  offeringSchema,
+  retrieve,
 };
