@@ -1,10 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 import Modal from './Modal.jsx';
 import LargeImage from './MainLargeImage.jsx';
 import SmallImages from './MainSmallImages.jsx';
 import $ from 'jquery';
 import { dummyData } from '../../../data';
+
+const { styled } = window;
 
 const Parent = styled.div`
   display: flex;
