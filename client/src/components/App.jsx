@@ -35,7 +35,7 @@ class Photos extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: '/api/photos/:offering',
+      url: 'http://localhost:3001/api/photos/',
       type: 'GET',
       success: (data) => {
         this.setState({ data: data });

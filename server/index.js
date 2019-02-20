@@ -9,8 +9,9 @@ app.use(express.static(__dirname + '/../client/dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
-app.get('/api/photos/:offering', (req, res) => {
+app.get('/api/photos/', (req, res) => {
   db.retrieve(null, (data) => {
+    res.header("Access-Control-Allow-Origin", "*");
     res.status(200).send(data);
   });
 });
