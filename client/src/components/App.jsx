@@ -23,7 +23,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-class App extends React.Component {
+class Photos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -70,4 +70,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Photos;

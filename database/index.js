@@ -26,7 +26,7 @@ const retrieve = (err, cb) => {
     return;
   }
   // Change offering_id to your choice of offering
-  var query = Offering.where({ offering_id: 1008 });
+  var query = Offering.where({ offering_id: 1004 });
   query.findOne(function (err, data) {
     if (err) {
       console.log('There was an error in query: ', err);
