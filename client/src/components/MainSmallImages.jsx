@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+
+const { styled } = window;
 
 const MiniImage = styled.div`
   width: 100%;
