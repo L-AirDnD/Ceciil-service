@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "build": "webpack --watch",
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
     "test": "jest || true",
     "test:coverage": "jest --coverage --colors || true",
     "seed": "node seed.js"
