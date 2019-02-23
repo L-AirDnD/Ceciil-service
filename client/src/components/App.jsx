@@ -15,12 +15,13 @@ const Parent = styled.div`
 
 const Button = styled.button`
   position: absolute;
-  top: 390px;
+  top: 372px;
   right: 24px;
   padding: 6px 15px 6px 15px;
   color: #484848;
   border-radius: 4px;
   font-size: 14px;
+  line-height: 22px;
   cursor: pointer;
 `;
 
@@ -48,6 +49,7 @@ export default class Photos extends React.Component {
   }
 
   showModal() {
+    console.log('Modal toggle')
     this.setState({
       show: !this.state.show,
     });

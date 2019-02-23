@@ -14,7 +14,7 @@ db.once('open', () => {
 const Schema = mongoose.Schema;
 
 const offeringSchema = new Schema({
-  offering_id: Number,
+  offering_ißßd: Number,
   photos: [{ url: String, caption: String }],
 });
 
