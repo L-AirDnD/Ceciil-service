@@ -19,7 +19,7 @@ const Container = styled.div`
   height: 100%;
 
   ${MiniImage}:hover {
-    opacity: .7;
+    opacity: .9;
   }
 `;
 

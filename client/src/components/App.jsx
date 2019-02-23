@@ -13,9 +13,34 @@ const Parent = styled.div`
   height: 430px;
 `;
 
-const Button = styled.button`
+const PhotosButton = styled.button`
   position: absolute;
   top: 372px;
+  right: 24px;
+  padding: 6px 15px 6px 15px;
+  color: #484848;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+`;
+
+const ShareButton = styled.button`
+  position: absolute;
+  top: 23px;
+  right: 104px;
+  padding: 6px 15px 6px 15px;
+  color: #484848;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+  opacity: 1;
+`;
+
+const SaveButton = styled.button`
+  position: absolute;
+  top: 23px;
   right: 24px;
   padding: 6px 15px 6px 15px;
   color: #484848;
@@ -66,7 +91,9 @@ export default class Photos extends React.Component {
         <Parent>
           <LargeImage data={this.state.data.photos[0]} />
           <SmallImages data={this.state.data.photos.slice(1, 5)} />
-          <Button onClick={this.showModal}>View Photos</Button>
+          <ShareButton>Share</ShareButton>
+          <SaveButton>Save</SaveButton>
+          <PhotosButton onClick={this.showModal}>View Photos</PhotosButton>
         </Parent>
       </div>
     );
