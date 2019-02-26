@@ -15,7 +15,7 @@ const Parent = styled.div`
 
 const PhotosButton = styled.button`
   position: absolute;
-  top: 372px;
+  top: 2px;
   right: 24px;
   padding: 6px 15px 6px 15px;
   color: #484848;
@@ -27,7 +27,7 @@ const PhotosButton = styled.button`
 
 const ShareButton = styled.button`
   position: absolute;
-  top: 23px;
+  top: 103px;
   right: 134px;
   padding: 6px 15px 6px 15px;
   color: #484848;
@@ -40,7 +40,7 @@ const ShareButton = styled.button`
 
 const SaveButton = styled.button`
   position: absolute;
-  top: 23px;
+  top: 103px;
   right: 24px;
   padding: 6px 15px 6px 15px;
   color: #484848;
