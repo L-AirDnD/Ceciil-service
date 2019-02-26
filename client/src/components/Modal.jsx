@@ -15,6 +15,7 @@ const Body = styled.div`
 
 const Container = styled.div`
   width: 100%;
+  height: 100%;
 `;
 
 const TopBar = styled.div`
@@ -24,13 +25,15 @@ const TopBar = styled.div`
 
 const Exit = styled.div`
   float: right;
-  right: 0px;
-  width: 50px;
   height: 50px;
-  margin-top: 13px;
-  color: white;
-  font-size: 28px;
+  margin-top: 6px;
+  margin-right: 20px;
   cursor: pointer;
+`;
+
+const ExitSvg = styled.img`
+  width: 48px;
+  height:48px;
 `;
 
 const Photo = styled.div`
@@ -57,32 +60,38 @@ const Arrow = styled.div`
   display: table;
   width 100px;
   padding: 3px;
-  color: white;
-  font-size: 42px;
   cursor: pointer;
 `;
 
 const Right = styled(Arrow)`
   display: table-cell; 
-  padding-top: 280px;
+  padding-top: 200px;
   text-align: center; 
-  vertical-align: middle; 
+`;
+
+const RightSvg = styled.img`
+  height: 100px;
+  width: 100px;
 `;
 
 const Left = styled(Arrow)`
   display: table-cell; 
-  padding-top: 280px;
+  padding-top: 200px;
   text-align: center; 
-  vertical-align: middle; 
+`;
+
+const LeftSvg = styled.img`
+  height: 100px;
+  width: 100px;
 `;
 
 const BottomBar = styled.div`
   width: 100%;
-  height: 123px;
+  height: 150px;
 `;
 
 const Caption = styled.div`
-  padding-top: 50px;
+  margin-top: 40px;
   color: white;
   font-size: 13px;
   font-family: 'Montserrat', sans-serif;
@@ -130,12 +139,18 @@ class Modal extends React.Component {
         <Body>
           <Container>
             <TopBar>
-              <Exit onClick={this.closeModal}>X</Exit>
+              <Exit onClick={this.closeModal}>
+                <ExitSvg src="https://s3-us-west-1.amazonaws.com/lair-dnd/svg/times-white.svg" />
+              </Exit>
             </TopBar>
             <Photo>
-              <Left onClick={this.previousImage}>L</Left>
+              <Left onClick={this.previousImage}>
+                <LeftSvg src="https://s3-us-west-1.amazonaws.com/lair-dnd/svg/left-angle-white.svg" />
+              </Left>
               <Image src={url} alt={caption} />
-              <Right onClick={this.nextImage}>R</Right>
+              <Right onClick={this.nextImage}>
+                <RightSvg src="https://s3-us-west-1.amazonaws.com/lair-dnd/svg/right-angle-white.svg" />
+              </Right>
             </Photo>
             <BottomBar>
               <Caption>

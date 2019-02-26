@@ -13,15 +13,47 @@ const Parent = styled.div`
   height: 430px;
 `;
 
-const Button = styled.button`
+const PhotosButton = styled.button`
   position: absolute;
-  top: 390px;
+  top: 2px;
   right: 24px;
   padding: 6px 15px 6px 15px;
   color: #484848;
   border-radius: 4px;
   font-size: 14px;
+  line-height: 22px;
   cursor: pointer;
+`;
+
+const ShareButton = styled.button`
+  position: absolute;
+  top: 103px;
+  right: 134px;
+  padding: 6px 15px 6px 15px;
+  color: #484848;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+  opacity: 1;
+`;
+
+const SaveButton = styled.button`
+  position: absolute;
+  top: 103px;
+  right: 24px;
+  padding: 6px 15px 6px 15px;
+  color: #484848;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+`;
+
+const Svg = styled.img`
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
 `;
 
 export default class Photos extends React.Component {
@@ -48,6 +80,7 @@ export default class Photos extends React.Component {
   }
 
   showModal() {
+    console.log('Modal toggle')
     this.setState({
       show: !this.state.show,
     });
@@ -64,7 +97,9 @@ export default class Photos extends React.Component {
         <Parent>
           <LargeImage data={this.state.data.photos[0]} />
           <SmallImages data={this.state.data.photos.slice(1, 5)} />
-          <Button onClick={this.showModal}>View Photos</Button>
+          <ShareButton><Svg src="https://s3-us-west-1.amazonaws.com/lair-dnd/svg/upload-solid.svg" />Share</ShareButton>
+          <SaveButton><Svg src="https://s3-us-west-1.amazonaws.com/lair-dnd/svg/heart-regular.svg" />Save</SaveButton>
+          <PhotosButton onClick={this.showModal}>View Photos</PhotosButton>
         </Parent>
       </div>
     );
